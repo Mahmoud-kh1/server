@@ -1444,7 +1444,7 @@ static bool sql_slave_killed(rpl_group_info *rgi)
         ret= difftime(my_time(0), rgi->last_event_start_time) <=
           SLAVE_WAIT_GROUP_DONE ? FALSE : TRUE;
 
-        DBUG_EXECUTE_IF("stop_slave_middle_group",
+        DBUG_EXECUTE_IF("stop_slave_middle_group", 
                         DBUG_EXECUTE_IF("incomplete_group_in_relay_log",
                                         ret= TRUE;);); // time is over
 
